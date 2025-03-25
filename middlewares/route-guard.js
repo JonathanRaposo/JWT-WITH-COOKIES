@@ -5,12 +5,10 @@ const jwt = require('jsonwebtoken');
 
 function parseCookies(req) {
 
-
     const rawCookies = req.headers.cookie;
     if (!rawCookies) {
         return {}
     }
-
     const cookies = {};
     const cookiePairs = rawCookies.split('; ');
 
@@ -21,8 +19,8 @@ function parseCookies(req) {
     return cookies;
 
 }
+
 function isLoggedIn(req, res, next) {
-    console.log(req);
 
     const cookies = parseCookies(req);
     const token = cookies.authToken;
@@ -45,7 +43,6 @@ function isLoggedIn(req, res, next) {
 function isLoggedOut(req, res, next) {
 
     const cookies = parseCookies(req);
-
     const token = cookies.authToken;
 
     if (token) {
@@ -60,6 +57,7 @@ function isLoggedOut(req, res, next) {
 }
 
 function isAdmin(req, res, next) {
+
     if (req.user && req.user.isAdmin) {
         return next();
     }
