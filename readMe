@@ -1,0 +1,1 @@
+This is a json web token authentication express app using cookies. You get to have the best of both worlds: using cookies and signed json web tokens.
