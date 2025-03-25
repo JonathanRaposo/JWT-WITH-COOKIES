@@ -11,8 +11,6 @@ const app = express();
 // SET UP MIDDLEWARES
 require('./config/index.js')(app);
 
-// CUSTOM COOKIE PARSER
-
 // ROUTES HERE
 
 const indexRouter = require('./routes/index.js');
