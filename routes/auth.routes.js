@@ -99,9 +99,7 @@ router.post('/login', isLoggedOut, (req, res) => {
                 const { name, email, isAdmin } = user;
                 const payload = { id, name, email, isAdmin };
                 const token = generateToken(payload);
-                console.log('token: ', token)
-
-
+            
                 res.cookie('authToken', token, {
                     httpOnly: true,
                     sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
