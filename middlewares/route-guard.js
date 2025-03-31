@@ -36,7 +36,7 @@ function isLoggedIn(req, res, next) {
 
     } catch (err) {
         console.log(err)
-        res.render('auth/403-error.hbs', { errorMessage: 'Invalid or expired token.' })
+        res.render('auth/403-error.hbs', { errorMessage: err.message })
     }
 }
 
